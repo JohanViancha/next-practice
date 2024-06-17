@@ -1,6 +1,10 @@
+"use client";
 
 export function MainProducts() {
-  return <div>
-    <h1>Main Products</h1>
-  </div>;
+  console.log(process.env.NEXT_PUBLIC_SHOPIFY_HOSTNAME);
+  return (
+    <div>
+      <h1>Main Products</h1>
+    </div>
+  );
 }
