@@ -1,7 +1,20 @@
-"use client";
+const getProducts = async () => {
+  const response = await fetch(
+    `${process.env.SHOPIFY_HOSTNAME}/admin/api/2023-10/products.json`,
+    {
+      headers: {
+        "X-Shopify-Access-Token": process.env.SHOPIFY_API_KEY || "",
+      },
+    }
+  );
 
-export function MainProducts() {
-  console.log(process.env.NEXT_PUBLIC_SHOPIFY_HOSTNAME);
+  const data = await response.json();
+  return data;
+};
+
+export async function MainProducts() {
+  const products = await getProducts();
+  console.log(products);
   return (
     <div>
       <h1>Main Products</h1>
