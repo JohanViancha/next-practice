@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+import { hostname } from "os";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 
@@ -9,6 +10,14 @@ const nextConfig = {
   sassOptions: {
     includePaths: [join(__dirname, "src/sass")],
     prependData: `@import "main.sass"`,
+  },
+  images: {
+    remotePatterns: [
+      {
+        hostname: "cdn.shopify.com",
+        protocol: "https",
+      },
+    ],
   },
 };
 
