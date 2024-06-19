@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface CategoryPros {
   params: {
@@ -7,9 +7,8 @@ interface CategoryPros {
 }
 
 const Category = (props: CategoryPros) => {
-    const { category } = props.params;
+  const { category } = props.params;
 
-  console.log(category);
   return <h1>{category}</h1>;
 };
 
